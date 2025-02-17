@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 export default function TextForm(props) {
-    
+
     const handleUpClick = () => {
         setText(text.toUpperCase());
         props.showAlert("Text converted to uppercase successfully.", "Success");
@@ -45,20 +45,20 @@ export default function TextForm(props) {
 
     return (
         <>
-            <div className="container d-flex flex-column align-items-center mt-4" style={{color: props.mode === 'dark' ? 'white' : 'black'}}>
+            <div className={`container d-flex flex-column align-items-center mt-4 ${props.mode === 'dark' ? 'text-white' : 'text-dark'}`}>
                 <h1 className="text-center">{props.heading}</h1>
                 <div className="mb-3 w-75">
                     <textarea
                         className="form-control"
                         value={text}
                         onChange={handleOnChange}
-                        style={{backgroundColor: props.mode === 'dark' ? '#181818' : 'white', color: props.mode === 'dark' ? 'white' : 'black'}}
+                        style={{ backgroundColor: props.mode === 'dark' ? '#181818' : 'white', color: props.mode === 'dark' ? 'white' : 'black' }}
                         id="myBox"
                         rows="8"
                     ></textarea>
                 </div>
 
-                {/* Buttons Container which will be side by side else could be done in different way too*/}
+                {/* Buttons Container */}
                 <div className="d-flex gap-2">
                     <button className="btn btn-primary" onClick={handleUpClick}>
                         Uppercase
@@ -69,19 +69,19 @@ export default function TextForm(props) {
                     </button>
 
                     <button className="btn btn-primary" onClick={handleCopy}>
-                       Copy Text
-                   </button>
+                        Copy Text
+                    </button>
 
-                   <button className="btn btn-primary" onClick={handleExtraSpaces}>
-                       Remove Extra Spaces
-                   </button>
+                    <button className="btn btn-primary" onClick={handleExtraSpaces}>
+                        Remove Extra Spaces
+                    </button>
 
                     <button className="btn btn-danger" onClick={handleClearClick}>
                         Clear
                     </button>
                 </div>
 
-                {/* Find and Replace bro*/}
+                {/* Find and Replace */}
                 <div className="mt-4 w-75">
                     <h3>Find & Replace</h3>
                     <div className="d-flex gap-2">
@@ -91,7 +91,7 @@ export default function TextForm(props) {
                             placeholder="Find..."
                             value={findWord}
                             onChange={(e) => setFindWord(e.target.value)}
-                            style={{backgroundColor: props.mode === 'dark' ? '#181818' : 'white', color: props.mode === 'dark' ? 'white' : 'black'}}
+                            style={{ backgroundColor: props.mode === 'dark' ? '#181818' : 'white', color: props.mode === 'dark' ? 'white' : 'black' }}
                         />
                         <input
                             type="text"
@@ -99,7 +99,7 @@ export default function TextForm(props) {
                             placeholder="Replace with..."
                             value={replaceWord}
                             onChange={(e) => setReplaceWord(e.target.value)}
-                            style={{backgroundColor: props.mode === 'dark' ? '#181818' : 'white', color: props.mode === 'dark' ? 'white' : 'black'}}
+                            style={{ backgroundColor: props.mode === 'dark' ? '#181818' : 'white', color: props.mode === 'dark' ? 'white' : 'black' }}
                         />
                         <button className="btn btn-success" onClick={handleFindReplace}>
                             Replace
@@ -108,7 +108,7 @@ export default function TextForm(props) {
                 </div>
             </div>
 
-            <div className="container my-2" style={{color: props.mode === 'dark' ? 'white' : 'black'}}>
+            <div className={`container my-2 ${props.mode === 'dark' ? 'text-white' : 'text-dark'}`}>
                 <h2>Your text summary</h2>
                 <p>{text.split(" ").filter(word => word !== "").length} words and {text.length} characters</p>
                 <p>{0.008 * (text.split(" ").filter(word => word !== "").length)} Minute is required to finish reading.</p>
