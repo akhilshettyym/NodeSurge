@@ -1,20 +1,18 @@
-"use client"
-
-import { useState } from "react"
-import { Link, useNavigate } from "react-router-dom"
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Signup() {
-  const [isLoading, setIsLoading] = useState(false)
-  const navigate = useNavigate()
+  const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
-    setIsLoading(true)
+    e.preventDefault();
+    setIsLoading(true);
     // Add sign up logic here
     setTimeout(() => {
-      navigate("/home")
-    }, 1000)
-  }
+      navigate("/home");
+    }, 1000);
+  };
 
   return (
     <div className="min-vh-100 d-flex align-items-center justify-content-center px-4">
@@ -66,5 +64,5 @@ export default function Signup() {
         </form>
       </div>
     </div>
-  )
+  );
 }

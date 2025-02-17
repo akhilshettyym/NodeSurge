@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 
 export default function Home() {
   const apps = [
@@ -38,24 +38,25 @@ export default function Home() {
       icon: "🤖",
       href: "/chatbot",
     },
-  ]
+  ];
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-8">Your Applications</h1>
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <h1 className="text-3xl font-bold mb-8 text-center">Your Applications</h1>
+      <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
         {apps.map((app) => (
-          <Link
+          <div
             key={app.title}
-            to={app.href}
-            className="block p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow dark:bg-gray-800"
+            className="p-6 bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow"
           >
-            <div className="mb-2 text-2xl">{app.icon}</div>
-            <h3 className="text-xl font-semibold mb-2">{app.title}</h3>
-            <p className="text-gray-500">{app.description}</p>
-          </Link>
+            <Link to={app.href} className="block text-center">
+              <div className="mb-4 text-4xl">{app.icon}</div>
+              <h3 className="text-xl font-semibold mb-2">{app.title}</h3>
+              <p className="text-gray-500">{app.description}</p>
+            </Link>
+          </div>
         ))}
       </div>
     </div>
-  )
+  );
 }
