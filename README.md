@@ -1,2 +1,2 @@
 # Seido
-Boost your productivity with Seido !! An all-in-one app for text tools, to-do lists, weather updates, and more—stay organized effortlessly! for accuracy and precision.
+Maximize productivity with Seido—your comprehensive app for advanced text tools, intricate to-do lists, real-time weather insights, and more. Seamlessly organize your tasks and enhance precision in every aspect of your day!
