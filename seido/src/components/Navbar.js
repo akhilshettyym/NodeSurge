@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 
 export default function Navbar(props) {
   return (
-    <nav className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}>
+    <nav className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode} shadow-sm`}>
       <div className="container-fluid">
         <Link className="navbar-brand" to="/">
           Seido
@@ -55,8 +55,9 @@ export default function Navbar(props) {
         </div>
       </div>
     </nav>
-  )
+  );
 }
+
 
 Navbar.propTypes = {
   mode: PropTypes.string.isRequired,
