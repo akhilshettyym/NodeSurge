@@ -5,13 +5,14 @@ export default function LandingPage({ mode }) {
 
   return (  
     <div className={`d-flex flex-column align-items-center justify-content-center min-vh-100 text-center p-4 ${mode === 'dark' ? 'bg-dark text-white' : 'bg-light text-dark'}`}>  
-      <h1 className="display-3 fw-bold">Welcome to Seido</h1>  
+      <h1 className="display-3 fw-bold">Welcome to NodeSurge</h1>  
       <p className="lead text-muted mb-4 my-3">  
-        Maximize productivity with Seido—your comprehensive app for advanced text tools, intricate to-do lists, real-time weather insights, and more. Seamlessly organize your tasks and enhance precision in every aspect of your day!
+        Maximize productivity with NodeSurge—your comprehensive app for advanced text tools, intricate to-do lists, real-time weather insights, and more. Seamlessly organize your tasks and enhance precision in every aspect of your day!
       </p>  
+
       <button  
         onClick={() => navigate("/signup")}  
-        className={`btn ${mode === 'dark' ? 'btn-light' : 'btn-dark'} btn-lg`}  
+        className={`btn btn-lg ${mode === 'dark' ? 'btn-light' : 'btn-dark'} py-3 px-5`}  
       >  
         Get Started  
       </button>  

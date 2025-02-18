@@ -52,7 +52,7 @@
 }
 
 
-/* Add these styles to your existing App.css */
+/* Add these styles to your existing App.css
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
@@ -71,11 +71,4 @@
 body {
   background-color: var(--background-color);
   color: var(--text-color);
-}
-
-/* Preserve your existing styles below */
-
-.navbar {
-  border-bottom: 2px solid #ddd; /* Light border */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Light shadow */
-}
+} 
