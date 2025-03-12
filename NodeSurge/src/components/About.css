@@ -1,0 +1,21 @@
+.container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 5%;
+    margin-top: 3%;
+    margin-bottom: 3%;
+}
+
+.accordion-button {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.accordion-body {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+button {
+    transition: background-color 0.3s ease;
+}
