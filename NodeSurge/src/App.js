@@ -1,17 +1,17 @@
 "use client"
 
-import "./App.css";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Navbar from "./components/Navbar";
-import TextForm from "./components/TextForm";
-import About from "./components/About";
-import Alert from "./components/Alert";
-import LandingPage from "./components/LandingPage";
-import SignUp from "./components/Auth/SignUp";
-import Login from "./components/Auth/Login";
-import Home from "./components/Home";
-import { useState } from "react";
-
+import "./App.css"
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
+import Navbar from "./components/Proreact/Navbar"
+import TextForm from "./components/Proreact/TextForm"
+import About from "./components/Proreact/About"
+import Alert from "./components/Proreact/Alert"
+import LandingPage from "./components/LandingPage"
+import SignUp from "./components/Auth/SignUp"
+import Login from "./components/Auth/Login"
+import Home from "./components/Home"
+import TodoApp from "./components/TodoApp"
+import { useState } from "react"
 
 function App() {
   const [mode, setMode] = useState("light")
@@ -36,7 +36,7 @@ function App() {
 
   return (
     <Router>
-      <Navbar title="Ambulance" mode={mode} toggleMode={toggleMode} />
+      <Navbar title="NodeSurge" mode={mode} toggleMode={toggleMode} />
       <Alert alert={alert} />
       <Routes>
         <Route path="/" element={<LandingPage />} />
@@ -44,6 +44,8 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/home" element={<Home />} />
         <Route path="/about" element={<About />} />
+        <Route path="/todo" element={<TodoApp mode={mode} />} />
+
         <Route
           path="/proreact"
           element={
@@ -56,5 +58,4 @@ function App() {
     </Router>
   )
 }
-
-export default App
+export default App;

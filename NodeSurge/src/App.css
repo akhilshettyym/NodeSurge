@@ -37,10 +37,9 @@
   }
 }
 
-.App{
+.App {
   display: flex;
   color: #282c34;
-  
 }
 
 ::placeholder {
@@ -50,7 +49,6 @@
 .dark-mode ::placeholder {
   color: rgb(120, 119, 119);
 }
-
 
 /* Add these styles to your existing App.css
 @import "tailwindcss/base";
@@ -71,4 +69,4 @@
 body {
   background-color: var(--background-color);
   color: var(--text-color);
-} 
+}
