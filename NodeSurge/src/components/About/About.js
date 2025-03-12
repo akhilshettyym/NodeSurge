@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../About.css';
+import './About.css';
 
 export default function About(props) {
     const [darkMode, setDarkMode] = useState(false);
