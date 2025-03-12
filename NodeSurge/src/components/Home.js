@@ -30,19 +30,6 @@ export default function Home() {
       href: "/weather",
     },
     
-    {
-      title: "Counter",
-      description: "Simple yet powerful counter application",
-      icon: "🔢",
-      href: "/counter",
-    },
-    {
-      title: "Stopwatch",
-      description: "Precise time tracking made easy",
-      icon: "⏱️",
-      href: "/stopwatch",
-    },
-    
     
   ]
 
