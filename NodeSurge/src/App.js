@@ -6,6 +6,7 @@ import Navbar from "./components/Proreact/Navbar"
 import TextForm from "./components/Proreact/TextForm"
 import About from "./components/Proreact/About"
 import Alert from "./components/Proreact/Alert"
+import Contact from "./components/Contact/Contact"
 import LandingPage from "./components/LandingPage"
 import SignUp from "./components/Auth/SignUp"
 import Login from "./components/Auth/Login"
@@ -46,6 +47,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/home" element={<Home />} />
         <Route path="/about" element={<About />} />
+        <Route path="/Contact" element={<Contact />} />
         <Route path="/todo" element={<TodoApp mode={mode} />} />
         <Route path="/weather" element={<WeatherApp mode={mode} />} />
         <Route path="/chatbot" element={<ChatBot mode={mode} />} />
