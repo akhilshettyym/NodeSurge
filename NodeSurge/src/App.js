@@ -11,6 +11,7 @@ import SignUp from "./components/Auth/SignUp"
 import Login from "./components/Auth/Login"
 import Home from "./components/Home"
 import TodoApp from "./components/TodoApp"
+import WeatherApp from "./components/weather/WeatherApp"
 import { useState } from "react"
 
 function App() {
@@ -45,11 +46,12 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/todo" element={<TodoApp mode={mode} />} />
+        <Route path="/weather" element={<WeatherApp mode={mode} />} />
 
         <Route
           path="/proreact"
           element={
-            <div className="container my-3">
+            <div className="container my-2">
               <TextForm showAlert={showAlert} heading="Enter your text to analyze below:" mode={mode} />
             </div>
           }
