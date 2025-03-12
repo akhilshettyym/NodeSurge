@@ -13,6 +13,7 @@ import Home from "./components/Home"
 import TodoApp from "./components/TodoApp"
 import WeatherApp from "./components/weather/WeatherApp"
 import { useState } from "react"
+import ChatBot from "./components/ChatBot/ChatBot"
 
 function App() {
   const [mode, setMode] = useState("light")
@@ -47,6 +48,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/todo" element={<TodoApp mode={mode} />} />
         <Route path="/weather" element={<WeatherApp mode={mode} />} />
+        <Route path="/chatbot" element={<ChatBot mode={mode} />} />
 
         <Route
           path="/proreact"
