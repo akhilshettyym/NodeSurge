@@ -15,6 +15,8 @@ import TodoApp from "./components/TodoApp"
 import WeatherApp from "./components/weather/WeatherApp"
 import { useState } from "react"
 import ChatBot from "./components/ChatBot/ChatBot"
+import { AuthProvider } from "./contexts/AuthContext"
+import PrivateRoute from "./components/Auth/PrivateRoute"
 
 function App() {
   const [mode, setMode] = useState("light")
@@ -38,30 +40,67 @@ function App() {
   }
 
   return (
-    <Router>
-      <Navbar title="NodeSurge" mode={mode} toggleMode={toggleMode} />
-      <Alert alert={alert} />
-      <Routes>
-        <Route path="/" element={<LandingPage />} />
-        <Route path="/signup" element={<SignUp />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/home" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/Contact" element={<Contact />} />
-        <Route path="/todo" element={<TodoApp mode={mode} />} />
-        <Route path="/weather" element={<WeatherApp mode={mode} />} />
-        <Route path="/chatbot" element={<ChatBot mode={mode} />} />
+    <AuthProvider>
+      <Router>
+        <Navbar title="NodeSurge" mode={mode} toggleMode={toggleMode} />
+        <Alert alert={alert} />
+        <Routes>
+          <Route path="/" element={<LandingPage mode={mode} />} />
+          <Route path="/signup" element={<SignUp mode={mode} />} />
+          <Route path="/login" element={<Login mode={mode} />} />
 
-        <Route
-          path="/proreact"
-          element={
-            <div className="container my-2">
-              <TextForm showAlert={showAlert} heading="Enter your text to analyze below:" mode={mode} />
-            </div>
-          }
-        />
-      </Routes>
-    </Router>
+          <Route
+            path="/home"
+            element={
+              <PrivateRoute>
+                <Home mode={mode} />
+              </PrivateRoute>
+            }
+          />
+
+          <Route path="/about" element={<About mode={mode} />} />
+          <Route path="/Contact" element={<Contact />} />
+
+          <Route
+            path="/todo"
+            element={
+              <PrivateRoute>
+                <TodoApp mode={mode} />
+              </PrivateRoute>
+            }
+          />
+
+          <Route
+            path="/weather"
+            element={
+              <PrivateRoute>
+                <WeatherApp mode={mode} />
+              </PrivateRoute>
+            }
+          />
+
+          <Route
+            path="/chatbot"
+            element={
+              <PrivateRoute>
+                <ChatBot mode={mode} />
+              </PrivateRoute>
+            }
+          />
+
+          <Route
+            path="/proreact"
+            element={
+              <PrivateRoute>
+                <div className="container my-2">
+                  <TextForm showAlert={showAlert} heading="Enter your text to analyze below:" mode={mode} />
+                </div>
+              </PrivateRoute>
+            }
+          />
+        </Routes>
+      </Router>
+    </AuthProvider>
   )
 }
 export default App;
