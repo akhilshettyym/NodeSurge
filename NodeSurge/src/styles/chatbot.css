@@ -3,16 +3,17 @@
 
 .chatbot-container {
   display: flex;
+  height: 40%;
   padding-top: 30px;
   padding-bottom: 30px;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  /* min-height: 60vh; */
   background: linear-gradient(#f5f0e1, #5a4d41);
 }
 
 .chatbot-popup {
-  width: 420px;
+  width: 450px;
   overflow: hidden;
   background: #fff;
   border-radius: 15px;
