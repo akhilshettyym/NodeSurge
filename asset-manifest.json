@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/NodeSurge/static/css/main.9ebef930.css",
+    "main.css": "/NodeSurge/static/css/main.fd511cad.css",
     "main.js": "/NodeSurge/static/js/main.5b058ebc.js",
     "static/js/511.2426fa85.chunk.js": "/NodeSurge/static/js/511.2426fa85.chunk.js",
     "static/media/sunset.jpg": "/NodeSurge/static/media/sunset.79e0d2f2b2e99ed91596.jpg",
     "index.html": "/NodeSurge/index.html",
-    "main.9ebef930.css.map": "/NodeSurge/static/css/main.9ebef930.css.map",
+    "main.fd511cad.css.map": "/NodeSurge/static/css/main.fd511cad.css.map",
     "main.5b058ebc.js.map": "/NodeSurge/static/js/main.5b058ebc.js.map",
     "511.2426fa85.chunk.js.map": "/NodeSurge/static/js/511.2426fa85.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9ebef930.css",
+    "static/css/main.fd511cad.css",
     "static/js/main.5b058ebc.js"
   ]
 }
