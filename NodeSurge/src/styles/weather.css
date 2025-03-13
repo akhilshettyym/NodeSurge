@@ -13,7 +13,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  
+
 }
 
 p {
@@ -63,7 +63,8 @@ p {
 
 .weather-app input {
   padding: 0.7rem 1.5rem;
-  margin-top: 50%; /* Matching app.css */
+  margin-top: 50%;
+  /* Matching app.css */
   font-size: 1.2rem;
   border-radius: 25px;
   border: 1px solid rgba(255, 255, 255, 0.8);
@@ -122,7 +123,8 @@ p {
   display: flex;
   justify-content: space-evenly;
   text-align: center;
-  width: 130%; /* Match width from app.css */
+  width: 130%;
+  /* Match width from app.css */
   max-width: 700px;
   margin-top: 1rem;
   padding: 1rem;

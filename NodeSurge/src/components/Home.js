@@ -31,7 +31,7 @@ export default function Home({ mode }) {
 
   return (
     <div className="home-container">
-      
+
       <h1 className="text-3xl font-bold mb-8 text-center" style={{ marginTop: '-20px' }}> Your Applications</h1>
 
       <div className="app-list">

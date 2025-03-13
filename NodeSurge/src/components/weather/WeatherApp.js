@@ -5,7 +5,7 @@ import axios from "axios"
 import "../../styles/weather.css"
 
 export default function WeatherApp({ mode }) {
-  const [data, setData] = useState(null) // Set to null initially to hide details
+  const [data, setData] = useState(null) // Setting to null initially to hide details
   const [location, setLocation] = useState("")
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
@@ -54,7 +54,7 @@ export default function WeatherApp({ mode }) {
         <div className="weather-container">
           <div className="top">
             <div className="location">
-            <p style={{ color: '#fff', fontSize: '50px' }}>Location: {data.name}</p>
+              <p style={{ color: '#fff', fontSize: '50px' }}>Location: {data.name}</p>
             </div>
 
             <div className="temp">

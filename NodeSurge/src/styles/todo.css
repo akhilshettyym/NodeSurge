@@ -1,54 +1,54 @@
 .todo-list {
-    max-height: 60vh;
-    overflow-y: auto;
-  }
-  
-  .card {
-    border: none;
-    border-radius: 10px;
-  }
-  
-  .card-body {
-    padding: 0.51rem;
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-  
-  .form-check-input:checked {
-    background-color: #0d6efd;
-    border-color: #0d6efd;
-  }
-  
-  .btn:focus {
-    box-shadow: none;
-  }
-  
-  .input-group {
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
-  }
-  
-  .input-group .form-control {
-    border-right: none;
-  }
-  
-  .input-group .btn {
-    border-left: none;
-  }
-  
-  .todo-list::-webkit-scrollbar {
-    width: 6px;
-  }
-  
-  .todo-list::-webkit-scrollbar-track {
-    background: #f1f1f1;
-  }
-  
-  .todo-list::-webkit-scrollbar-thumb {
-    background: #888;
-    border-radius: 3px;
-  }
-  
-  .todo-list::-webkit-scrollbar-thumb:hover {
-    background: #555;
-  }
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+.card {
+  border: none;
+  border-radius: 10px;
+}
+
+.card-body {
+  padding: 0.51rem;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.form-check-input:checked {
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+}
+
+.btn:focus {
+  box-shadow: none;
+}
+
+.input-group {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+.input-group .form-control {
+  border-right: none;
+}
+
+.input-group .btn {
+  border-left: none;
+}
+
+.todo-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.todo-list::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.todo-list::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 3px;
+}
+
+.todo-list::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

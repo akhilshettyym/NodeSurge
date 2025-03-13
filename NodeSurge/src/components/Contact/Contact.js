@@ -7,7 +7,7 @@ const Contact = () => {
       <div className="contact-card">
         <h2>Get in Touch</h2>
         <p>
-          Hey there! 👋 I'm <strong>Akhil Shetty</strong>, a passionate developer from Mangalore. 
+          Hey there! 👋 I'm <strong>Akhil Shetty</strong>, a passionate developer from Mangalore.
           I'm always open to connecting and collaborating on exciting projects.
         </p>
         <div className="contact-details">

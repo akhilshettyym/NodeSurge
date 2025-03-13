@@ -43,7 +43,7 @@ export default function SignUp({ mode }) {
     >
       <div
         className={`card shadow-lg p-4 ${mode === "dark" ? "bg-dark text-white border-secondary" : ""}`}
-        style={{ maxWidth: "400px", width: "100%" }}
+        style={{ maxWidth: "450px", width: "100%" }}
       >
         <h2 className="card-title text-center mb-4">Sign Up</h2>
         <p className="text-center text-muted mb-4">Create your account to get started</p>

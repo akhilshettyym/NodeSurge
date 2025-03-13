@@ -124,7 +124,8 @@
 }
 
 .chat-footer {
-  position: relative; /* Keep at the bottom without overlapping */
+  position: relative;
+  /* Keep at the bottom without overlapping */
   bottom: 0;
   width: 100%;
   height: auto;
@@ -173,8 +174,10 @@
   align-items: center;
   justify-content: center;
   transition: 0.2s ease-in-out;
-  opacity: 0; /* Hide initially */
-  pointer-events: none; /* Disable clicks */
+  opacity: 0;
+  /* Hide initially */
+  pointer-events: none;
+  /* Disable clicks */
 }
 
 .chat-form button:hover {
@@ -182,7 +185,7 @@
 }
 
 /* Show send button only when input has text */
-.chat-form .message-input:not(:placeholder-shown) ~ button {
+.chat-form .message-input:not(:placeholder-shown)~button {
   opacity: 1;
   pointer-events: auto;
 }
@@ -226,7 +229,8 @@
   .chatbot-container {
     margin: 0;
     padding: 0;
-    overflow: hidden; /* Prevents unwanted scrolling */
+    overflow: hidden;
+    /* Prevents unwanted scrolling */
   }
 
   #chatbot-toggler {
@@ -239,8 +243,10 @@
     position: fixed;
     right: 0;
     bottom: 0;
-    height: 100vh; /* Full screen */
-    width: 100vw; /* Full width */
+    height: 100vh;
+    /* Full screen */
+    width: 100vw;
+    /* Full width */
     border-radius: 0;
     display: flex;
     flex-direction: column;
