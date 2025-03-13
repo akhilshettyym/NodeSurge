@@ -54,7 +54,7 @@ export default function WeatherApp({ mode }) {
         <div className="weather-container">
           <div className="top">
             <div className="location">
-              <p>Location: {data.name}</p>
+            <p style={{ color: '#fff', fontSize: '50px' }}>Location: {data.name}</p>
             </div>
 
             <div className="temp">
@@ -62,7 +62,7 @@ export default function WeatherApp({ mode }) {
             </div>
 
             <div className="description">
-              <p>{data.weather[0].description}</p>
+              <p style={{ color: '#fff' }}>{data.weather[0].description}</p>
             </div>
           </div>
 
@@ -74,17 +74,17 @@ export default function WeatherApp({ mode }) {
           >
             <div className="feels">
               <p className="bold">{Math.round(data.main.feels_like)}°C</p>
-              <p>Feels like</p>
+              <p style={{ color: '#fff' }}>Feels like</p>
             </div>
 
             <div className="humidity">
               <p className="bold">{data.main.humidity}%</p>
-              <p>Humidity</p>
+              <p style={{ color: '#fff' }}>Humidity</p>
             </div>
 
             <div className="wind">
               <p className="bold">{data.wind.speed} km/h</p>
-              <p>Wind Speed</p>
+              <p style={{ color: '#fff' }}>Wind Speed</p>
             </div>
           </div>
         </div>

@@ -1,0 +1,75 @@
+.home-container {
+    padding: 70px;
+  }
+
+  .div .h1 {
+    font-size: 40px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 20px;
+}
+  
+  .app-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px; /* Space between cards */
+  }
+  
+  .app-card {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    gap: 16px;
+    padding: 16px;
+    border-radius: 12px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .app-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .app-icon {
+    font-size: 36px;
+    padding-left: 30px;
+  }
+  
+  .app-details {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .app-title {
+    font-size: 25px;
+    padding-left: 50px;
+    font-weight: 600;
+  }
+  
+  .app-description {
+    font-size: 18px;
+    padding-left: 50px;
+    color: #555;
+    margin-top: 4px;
+  }
+  
+  /* Dark mode styling */
+  .dark-mode .app-card {
+    background-color: #1a1a1a;
+    border: 1px solid #444;
+  }
+  
+  .dark-mode .app-description {
+    color: #aaa;
+  }  
+
+
+  .app-header {
+    margin-top: -20px;
+  }
+  

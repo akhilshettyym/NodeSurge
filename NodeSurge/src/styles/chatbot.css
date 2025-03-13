@@ -3,6 +3,8 @@
 
 .chatbot-container {
   display: flex;
+  padding-top: 30px;
+  padding-bottom: 30px;
   justify-content: center;
   align-items: center;
   min-height: 100vh;

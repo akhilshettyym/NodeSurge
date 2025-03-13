@@ -9,7 +9,9 @@
   }
   
   .card-body {
-    padding: 1.25rem;
+    padding: 0.51rem;
+    padding-left: 20px;
+    padding-right: 20px;
   }
   
   .form-check-input:checked {

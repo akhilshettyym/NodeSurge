@@ -13,6 +13,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
 }
 
 p {
@@ -46,6 +47,7 @@ p {
   top: 0;
   left: 0;
   z-index: -1;
+  /* color: #fff; */
 }
 
 .dark-mode.weather-app:before {
@@ -56,6 +58,7 @@ p {
   text-align: center;
   padding: 1rem;
   transition: transform 0.3s ease;
+  /* color: #fff; */
 }
 
 .weather-app input {
@@ -93,10 +96,12 @@ p {
 
 .location {
   margin-bottom: 1rem;
+  color: #fff;
 }
 
 .temp {
   margin-bottom: 1rem;
+  /* color: #fff; */
 }
 
 .description {
@@ -110,6 +115,7 @@ p {
   background: rgba(0, 0, 0, 0.5);
   padding: 5px 10px;
   border-radius: 5px;
+  color: #fff;
 }
 
 .bottom {
@@ -122,15 +128,18 @@ p {
   padding: 1rem;
   border-radius: 12px;
   background-color: rgba(255, 255, 255, 0.2);
+  /* color: #fff; */
 }
 
 .bottom div {
   flex: 1;
   padding: 10px;
+
 }
 
 .bold {
   font-weight: 700;
+  color: #fff;
 }
 
 .loading,

@@ -1,50 +1,48 @@
 import { Link } from "react-router-dom"
+import "../styles/home.css"
 
 export default function Home({ mode }) {
   const apps = [
     {
       title: "ProReact",
-      description: "Advanced text analysis and manipulation tool",
+      description: " ProReact is a text utility app that allows users to format text, convert case, remove extra spaces, and count words and letters in real-time. It's ideal for writers and content creators.",
       icon: "📝",
       href: "/proreact",
     },
     {
-      title: "Chatbot",
-      description: "Interactive AI-powered conversation",
+      title: "ChatNest",
+      description: "ChatNest is an AI chatbot using the Gemini model that provides real-time, smart responses to questions, assists with research and coding, and handles casual and professional conversations.",
       icon: "🤖",
       href: "/chatbot",
     },
     {
       title: "Todo Manager",
-      description: "Organize and track your tasks efficiently",
+      description: "To-Do Manager helps users manage daily tasks by creating, updating, and tracking them. Its clean interface makes it easy to stay organized and productive.",
       icon: "✓",
       href: "/todo",
     },
     {
-      title: "Weather",
-      description: "Real-time weather updates and forecasts",
+      title: "Weather App",
+      description: "Weather App gives real-time weather updates, including temperature, humidity, wind speed, and conditions based on the user’s location.",
       icon: "🌤️",
       href: "/weather",
     },
   ]
 
   return (
-    <div className={`container mx-auto px-4 py-8 ${mode === "dark" ? "bg-dark text-white" : ""}`}>
-      <h1 className="text-3xl font-bold mb-8 text-center">Your Applications</h1>
-      <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
+    <div className="home-container">
+      
+      <h1 className="text-3xl font-bold mb-8 text-center" style={{ marginTop: '-20px' }}> Your Applications</h1>
+
+      <div className="app-list">
         {apps.map((app) => (
-          <div
-            key={app.title}
-            className={`p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow ${
-              mode === "dark" ? "bg-dark text-white border border-secondary" : "bg-white"
-            }`}
-          >
-            <Link to={app.href} className="block text-center">
-              <div className="mb-4 text-4xl">{app.icon}</div>
-              <h3 className="text-xl font-semibold mb-2">{app.title}</h3>
-              <p className={mode === "dark" ? "text-light" : "text-gray-500"}>{app.description}</p>
-            </Link>
-          </div>
+          <Link to={app.href} key={app.title} className="app-card">
+            <div className="app-icon">{app.icon}</div>
+            <div className="app-details">
+              <h3 className="app-title">{app.title}</h3>
+              <p className="app-description">{app.description}</p>
+            </div>
+          </Link>
         ))}
       </div>
     </div>
