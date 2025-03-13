@@ -1,7 +1,7 @@
 "use client"
 
 import "./styles/App.css"
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
+import { HashRouter as Router, Route, Routes } from 'react-router-dom'
 import Navbar from "./components/Proreact/Navbar"
 import TextForm from "./components/Proreact/TextForm"
 import About from "./components/About/About"
