@@ -23,7 +23,7 @@ export default function Home({ mode }) {
     },
     {
       title: "Weather App",
-      description: "Weather App gives real-time weather updates, including temperature, humidity, wind speed, and conditions based on the user’s location.",
+      description: "Weather App provides real-time weather updates for Goa, including temperature, humidity, wind speed, and current conditions. Stay informed about the weather anytime, anywhere.",
       icon: "🌤️",
       href: "/weather",
     },
@@ -32,7 +32,15 @@ export default function Home({ mode }) {
   return (
     <div className="home-container">
 
-      <h1 className="text-3xl font-bold mb-8 text-center" style={{ marginTop: '-20px' }}> Your Applications</h1>
+      <h1
+        className="text-3xl font-bold mb-8 text-center"
+        style={{
+          marginTop: '-20px', 
+          fontWeight: 750,
+          color: mode === 'dark' ? '#f8f9fa' : '#212529', // Adjust colors for dark and light mode
+        }}>
+        Explore Your Tools
+      </h1>
 
       <div className="app-list">
         {apps.map((app) => (

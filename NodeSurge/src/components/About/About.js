@@ -26,7 +26,8 @@ export default function About(props) {
 
     return (
         <div className={`container ${darkMode ? "dark-mode" : ""}`} style={myStyle}>
-            <h2 className="my-3">🚀 About Our Multi-Utility Website</h2>
+            <h2 className="my-3"
+            >🚀 About Our Multi-Utility Website</h2>
             <p>
                 Welcome to our multi-utility website — a single platform offering multiple helpful tools designed to make your
                 daily tasks easier and more efficient. Below is a detailed overview of the four key apps integrated into our
