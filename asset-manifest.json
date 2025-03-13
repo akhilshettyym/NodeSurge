@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/NodeSurge/static/css/main.9ebef930.css",
+    "main.js": "/NodeSurge/static/js/main.42a63375.js",
+    "static/js/511.2426fa85.chunk.js": "/NodeSurge/static/js/511.2426fa85.chunk.js",
+    "static/media/sunset.jpg": "/NodeSurge/static/media/sunset.79e0d2f2b2e99ed91596.jpg",
+    "index.html": "/NodeSurge/index.html",
+    "main.9ebef930.css.map": "/NodeSurge/static/css/main.9ebef930.css.map",
+    "main.42a63375.js.map": "/NodeSurge/static/js/main.42a63375.js.map",
+    "511.2426fa85.chunk.js.map": "/NodeSurge/static/js/511.2426fa85.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9ebef930.css",
+    "static/js/main.42a63375.js"
+  ]
+}
