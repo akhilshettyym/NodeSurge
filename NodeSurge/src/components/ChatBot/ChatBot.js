@@ -5,6 +5,7 @@ import "../../styles/chatbot.css"
 import ChatbotIcon from "./ChatBotIcon"
 import ChatForm from "./ChatForm"
 import ChatMessage from "./ChatMessage"
+import { Helmet } from "react-helmet"
 
 // Main Chatbot Component
 const ChatBot = ({ mode }) => {
@@ -39,7 +40,7 @@ const ChatBot = ({ mode }) => {
       if (!process.env.REACT_APP_API_URL) {
         setTimeout(() => {
           updateHistory(
-            "I'm sorry, the API URL is not configured. Please set the REACT_APP_API_URL environment variable.",
+            "I'm ChatNest, your AI assistant. How can I help you today? (Note: For full functionality, please set the REACT_APP_API_URL environment variable.)",
           )
         }, 1000)
         return
@@ -76,44 +77,53 @@ const ChatBot = ({ mode }) => {
   }, [chatHistory])
 
   return (
-    <div className={`chatbot-container ${mode === "dark" ? "dark-mode" : ""}`}>
-      <div className="chatbot-popup">
-        {/* Chatbot Header */}
-        <div className="chat-header">
-          <div className="header-info">
-            <ChatbotIcon /> {/* Display chatbot icon */}
-            <h2 className="logo-text">ChatNest</h2> {/* Chatbot title */}
-          </div>
-          <button className="material-symbols-rounded">keyboard_arrow_down</button> {/* Button to collapse chatbot */}
-        </div>
-
-        {/* Chatbot Body */}
-        <div ref={chatBodyRef} className="chat-body">
-          {/* Initial greeting message from the bot */}
-          <div className="message bot-message">
-            <ChatbotIcon />
-            <p className="message-text">
-              Hey there!👋
-              <br /> How can I assist you today?{" "}
-            </p>
+    <>
+      <Helmet>
+        <title>NodeSurge - ChatNest AI Assistant</title>
+        <meta
+          name="description"
+          content="Chat with our AI assistant for help with research, coding, and more. Get smart, contextual responses in real-time."
+        />
+      </Helmet>
+      <div className={`chatbot-container ${mode === "dark" ? "dark-mode" : ""}`}>
+        <div className="chatbot-popup">
+          {/* Chatbot Header */}
+          <div className="chat-header">
+            <div className="header-info">
+              <ChatbotIcon /> {/* Display chatbot icon */}
+              <h2 className="logo-text">ChatNest</h2> {/* Chatbot title */}
+            </div>
+            <button className="material-symbols-rounded">keyboard_arrow_down</button> {/* Button to collapse chatbot */}
           </div>
 
-          {/* Render the chat history dynamically */}
-          {chatHistory.map((chat, index) => (
-            <ChatMessage key={index} chat={chat} />
-          ))}
-        </div>
+          {/* Chatbot Body */}
+          <div ref={chatBodyRef} className="chat-body">
+            {/* Initial greeting message from the bot */}
+            <div className="message bot-message">
+              <ChatbotIcon />
+              <p className="message-text">
+                Hey there!👋
+                <br /> How can I assist you today?{" "}
+              </p>
+            </div>
 
-        {/* Chatbot Footer - Input field for user messages */}
-        <div className="chat-footer">
-          <ChatForm
-            chatHistory={chatHistory}
-            setChatHistory={setChatHistory}
-            generateBotResponse={generateBotResponse}
-          />
+            {/* Render the chat history dynamically */}
+            {chatHistory.map((chat, index) => (
+              <ChatMessage key={index} chat={chat} />
+            ))}
+          </div>
+
+          {/* Chatbot Footer - Input field for user messages */}
+          <div className="chat-footer">
+            <ChatForm
+              chatHistory={chatHistory}
+              setChatHistory={setChatHistory}
+              generateBotResponse={generateBotResponse}
+            />
+          </div>
         </div>
       </div>
-    </div>
+    </>
   )
 }
 

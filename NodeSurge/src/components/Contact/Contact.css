@@ -31,7 +31,7 @@
   
   p {
     color: #555;
-    font-size: 16px;
+    font-size: 14px;
     margin-bottom: 8px;
   }
   
@@ -59,10 +59,10 @@
     }
   
     h2 {
-      font-size: 24px;
+      font-size: 14px;
     }
   
     p {
-      font-size: 14px;
+      font-size: 10px;
     }
   }  
