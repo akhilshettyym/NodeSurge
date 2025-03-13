@@ -1,3 +1,4 @@
+/* Contact.css */
 .contact-container {
   display: flex;
   justify-content: center;
@@ -5,15 +6,17 @@
   padding: 40px;
   background-color: #f4f4f9;
   min-height: 100vh;
+  flex-direction: column;
+  padding: 20px;
 }
 
 .contact-card {
   background-color: #ffffff;
-  padding: 30px;
+  padding: 20px;
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  max-width: 700px;
-  width: 100%;
+  max-width: 100%;
+  /* width: 100%; */
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -59,10 +62,10 @@ p {
   }
 
   h2 {
-    font-size: 14px;
+    font-size: 1.2rem;
   }
 
   p {
-    font-size: 10px;
+    font-size: 0.9rem;
   }
 }

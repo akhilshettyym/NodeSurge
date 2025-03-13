@@ -1,3 +1,4 @@
+/* todo.css */
 .todo-list {
   max-height: 60vh;
   overflow-y: auto;
@@ -51,4 +52,9 @@
 
 .todo-list::-webkit-scrollbar-thumb:hover {
   background: #555;
+}
+@media (max-width: 600px) {
+  .card-body {
+      padding: 8px;
+  }
 }

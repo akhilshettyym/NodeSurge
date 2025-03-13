@@ -1,3 +1,4 @@
+/* chatbot.css */
 /* Importing Google fonts - Inter */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
 
@@ -13,7 +14,8 @@
 }
 
 .chatbot-popup {
-  width: 450px;
+  width: 90%;
+  max-width: 400px;
   overflow: hidden;
   background: #fff;
   border-radius: 15px;
@@ -261,6 +263,7 @@
     flex-grow: 1;
     padding: 10px 15px;
     overflow-y: auto;
+    height: 70vh;
   }
 
   .chat-footer {
