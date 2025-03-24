@@ -9,6 +9,15 @@ export default function Home({ mode }) {
       icon: "📝",
       href: "/proreact",
     },
+
+    {
+      title: "Currex",
+      description: "Currex is a currency converter app that allows users to convert between different currencies in real-time. It's ideal for travelers and business professionals.",
+      icon: "💸",
+      href: "/currex",
+    },
+      
+
     {
       title: "PassKey",
       description: "PassKey is a password generator that creates strong, secure passwords with a single click. It allows users to customize the length and complexity of the password.",

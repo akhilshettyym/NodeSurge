@@ -41,7 +41,7 @@ p {
 /* Background Image */
 .weather-app:before {
   content: "";
-  background: url('/src/assets/sunset.jpg') no-repeat center/cover;
+  background: url('/src/assets/weather.jpg') no-repeat center/cover;
   position: absolute;
   width: 100%;
   height: 100%;

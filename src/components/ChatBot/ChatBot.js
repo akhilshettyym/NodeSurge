@@ -7,16 +7,23 @@ import ChatForm from "./ChatForm"
 import ChatMessage from "./ChatMessage"
 import { Helmet } from "react-helmet"
 
-
 const ChatBot = ({ mode }) => {
-
   const [chatHistory, setChatHistory] = useState([])
-
   const chatBodyRef = useRef()
 
   const generateBotResponse = async (history) => {
     const updateHistory = (text) => {
       setChatHistory((prev) => [...prev.filter((msg) => msg.text !== "Thinking..."), { role: "model", text }])
+    }
+
+    // If no API URL is set, provide a fallback response
+    if (!process.env.REACT_APP_API_URL) {
+      setTimeout(() => {
+        updateHistory(
+          "I'm ChatNest, your AI assistant. How can I help you today? (Note: For full functionality, please set the REACT_APP_API_URL environment variable.)",
+        )
+      }, 1000)
+      return
     }
 
     history = history.map(({ role, text }) => ({ role, parts: [{ text }] }))
@@ -29,16 +36,6 @@ const ChatBot = ({ mode }) => {
 
     try {
       const response = await fetch(process.env.REACT_APP_API_URL, requestOptions)
-
-      if (!process.env.REACT_APP_API_URL) {
-        setTimeout(() => {
-          updateHistory(
-            "I'm ChatNest, your AI assistant. How can I help you today? (Note: For full functionality, please set the REACT_APP_API_URL environment variable.)",
-          )
-        }, 1000)
-        return
-      }
-
       const data = await response.json()
 
       console.log("API Response:", JSON.stringify(data, null, 2))
@@ -50,11 +47,10 @@ const ChatBot = ({ mode }) => {
       }
 
       const apiResponse = data.candidates[0].content.parts[0].text.replace(/\*\*(.*?)\*\*/g, "$1").trim()
-
       updateHistory(apiResponse)
     } catch (error) {
       console.error("Error fetching response:", error)
-      updateHistory("Sorry, I encountered an error. Please check your API configuration or try again later.") // Show error message to the user
+      updateHistory("Sorry, I encountered an error. Please check your API configuration or try again later.")
     }
   }
 

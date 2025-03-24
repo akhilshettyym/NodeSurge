@@ -1,7 +1,7 @@
 "use client"
 
 import "./styles/App.css"
-import { HashRouter as Router, Route, Routes } from 'react-router-dom'
+import { HashRouter as Router, Route, Routes } from "react-router-dom"
 import Navbar from "./components/Proreact/Navbar"
 import TextForm from "./components/Proreact/TextForm"
 import About from "./components/About/About"
@@ -18,6 +18,7 @@ import ChatBot from "./components/ChatBot/ChatBot"
 import { AuthProvider } from "./contexts/AuthContext"
 import PrivateRoute from "./components/Auth/PrivateRoute"
 import PassKey from "./components/PassKey/PassKey"
+import Currex from "./components/Currex/Currex"
 
 function App() {
   const [mode, setMode] = useState("light")
@@ -70,12 +71,21 @@ function App() {
               </PrivateRoute>
             }
           />
-          
+
           <Route
             path="/passkey"
             element={
               <PrivateRoute>
                 <PassKey mode={mode} />
+              </PrivateRoute>
+            }
+          />
+
+          <Route
+            path="/currex"
+            element={
+              <PrivateRoute>
+                <Currex mode={mode} />
               </PrivateRoute>
             }
           />
@@ -110,7 +120,6 @@ function App() {
           />
         </Routes>
       </Router>
-
     </AuthProvider>
   )
 }
