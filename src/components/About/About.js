@@ -104,6 +104,38 @@ export default function About(props) {
                 </div>
 
 
+                {/* PassKey Section */}
+                <div className="accordion-item">
+                    <h2 className="accordion-header">
+                        <button
+                            className="accordion-button collapsed"
+                            type="button"
+                            style={myStyle}
+                            data-bs-toggle="collapse"
+                            data-bs-target="#PassKey"
+                            aria-expanded="false"
+                            aria-controls="PassKey"
+                        >
+                            🔐 PassKey — Secure & Customizable Password Generator
+                        </button>
+                    </h2>
+                    <div id="PassKey" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                        <div className="accordion-body" style={myStyle}>
+                            <strong>PassKey</strong> is a free and easy-to-use password generator that instantly creates strong and secure passwords. It allows you to:
+                            <ul>
+                                <li>Generate highly secure and random passwords with just one click</li>
+                                <li>Customize password length to meet your security needs</li>
+                                <li>Include numbers, special characters, and uppercase letters for enhanced security</li>
+                                <li>Ensure password strength with real-time feedback and intuitive design</li>
+                                <li>Built with React & Tailwind CSS for a sleek, responsive, and seamless user experience</li>
+                            </ul>
+
+                            🔑 <strong>PassKey</strong> – Lock Your Security with Strong Passwords! 🔒
+                        </div>
+                    </div>
+                </div>
+
+
 
                 {/* ChatNest Section */}
                 <div className="accordion-item">
