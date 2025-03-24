@@ -17,6 +17,7 @@ import { useState } from "react"
 import ChatBot from "./components/ChatBot/ChatBot"
 import { AuthProvider } from "./contexts/AuthContext"
 import PrivateRoute from "./components/Auth/PrivateRoute"
+import PassKey from "./components/PassKey/PassKey"
 
 function App() {
   const [mode, setMode] = useState("light")
@@ -69,6 +70,15 @@ function App() {
               </PrivateRoute>
             }
           />
+          
+          <Route
+            path="/passkey"
+            element={
+              <PrivateRoute>
+                <PassKey mode={mode} />
+              </PrivateRoute>
+            }
+          />
 
           <Route
             path="/weather"
@@ -100,7 +110,7 @@ function App() {
           />
         </Routes>
       </Router>
-      
+
     </AuthProvider>
   )
 }

@@ -10,6 +10,12 @@ export default function Home({ mode }) {
       href: "/proreact",
     },
     {
+      title: "PassKey",
+      description: "PassKey is a password generator that creates strong, secure passwords with a single click. It allows users to customize the length and complexity of the password.",
+      icon: "🔑",
+      href: "/passkey",
+    },
+    {
       title: "ChatNest",
       description: "ChatNest is an AI chatbot using the Gemini model that provides real-time, smart responses to questions, assists with research and coding, and handles casual and professional conversations.",
       icon: "🤖",
