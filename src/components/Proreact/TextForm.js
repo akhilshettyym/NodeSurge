@@ -156,7 +156,7 @@ export default function TextForm(props) {
                                 className="card-text"
                                 style={{
                                     backgroundColor: props.mode === "dark" ? "#1a202c" : "#f8f9fa",
-                                    color: props.mode === "dark" ? "white" : "black", // Fixed text color issue
+                                    color: props.mode === "dark" ? "white" : "black",
                                     padding: "10px",
                                     borderRadius: "5px",
                                     minHeight: "50px",
