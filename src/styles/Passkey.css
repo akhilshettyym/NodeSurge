@@ -9,12 +9,12 @@
   .card {
     width: 100%;
     max-width: 500px;
-    background: #1e2938;
+    background: #93a6c1;
     color: white;
     padding: 20px;
     border-radius: 10px;
     text-align: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(15px);
   }
   
@@ -27,7 +27,7 @@
   .input-container {
     display: flex;
     align-items: center;
-    background-color: #364153;
+    background-color: #465164;
     padding: 10px;
     border-radius: 6px;
     margin-bottom: 20px;
@@ -83,7 +83,7 @@
   
   .slider {
     cursor: pointer;
-    width: 60%;
+    width: 58%;
   }
   
   .label {
@@ -113,5 +113,3 @@
       justify-content: space-around;
     }
   }
-  
-  
