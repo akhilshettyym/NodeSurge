@@ -112,13 +112,15 @@ function App() {
             path="/proreact"
             element={
               <PrivateRoute>
-                <div className="container my-2">
+                <div className="container my-5">
                   <TextForm showAlert={showAlert} heading="Enter your text to analyze below:" mode={mode} />
                 </div>
               </PrivateRoute>
             }
           />
+
         </Routes>
+
       </Router>
     </AuthProvider>
   )

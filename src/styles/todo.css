@@ -1,25 +1,68 @@
-/* todo.css */
+Ensure the background color covers the entire viewport
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #f8f9fa; /* Light mode default */
+  transition: background-color 0.3s ease-in-out;
+}
+
+/* Container styles */
+.container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: inherit; /* Inherits background from body */
+}
+
+/* Dark mode styles */
+.bg-dark {
+  background-color: #121212 !important; /* Ensures dark mode applies correctly */
+  color: #ffffff;
+}
+
+/* Todo List Box */
+.todo-box {
+  background: #fff; /* Light mode box */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease-in-out;
+}
+
+/* Dark Mode Box */
+.bg-dark .todo-box {
+  background: #1e1e1e !important; /* Dark mode box */
+  color: white;
+}
+
+/* Fix Scrollbar Appearance */
 .todo-list {
   max-height: 60vh;
   overflow-y: auto;
+  padding-right: 5px;
 }
 
-.card {
-  border: none;
-  border-radius: 10px;
+.todo-list::-webkit-scrollbar {
+  width: 6px;
 }
 
-.card-body {
-  padding: 0.51rem;
-  padding-left: 20px;
-  padding-right: 20px;
+.todo-list::-webkit-scrollbar-track {
+  background: transparent; /* Make scrollbar track match background */
 }
 
-.form-check-input:checked {
-  background-color: #0d6efd;
-  border-color: #0d6efd;
+.todo-list::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 3px;
 }
 
+.todo-list::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.8);
+}
+
+/* Buttons and Input Fields */
 .btn:focus {
   box-shadow: none;
 }
@@ -27,6 +70,7 @@
 .input-group {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
+  margin-bottom: 20px;
 }
 
 .input-group .form-control {
@@ -37,24 +81,9 @@
   border-left: none;
 }
 
-.todo-list::-webkit-scrollbar {
-  width: 6px;
-}
-
-.todo-list::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
-
-.todo-list::-webkit-scrollbar-thumb {
-  background: #888;
-  border-radius: 3px;
-}
-
-.todo-list::-webkit-scrollbar-thumb:hover {
-  background: #555;
-}
+/* Responsive Fix */
 @media (max-width: 600px) {
   .card-body {
-      padding: 8px;
+    padding: 12px;
   }
 }

@@ -1,14 +1,24 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { TodoForm } from "./TodoForm"
 import { Todo } from "./Todo"
 import { EditTodoForm } from "./EditTodoForm"
 
 export const TodoWrapper = ({ mode }) => {
-  const [todos, setTodos] = useState([])
+  // Load todos from localStorage on component mount
+  const [todos, setTodos] = useState(() => {
+    const savedTodos = localStorage.getItem("todos")
+    return savedTodos ? JSON.parse(savedTodos) : []
+  })
+
+  // Save todos to localStorage whenever they change
+  useEffect(() => {
+    localStorage.setItem("todos", JSON.stringify(todos))
+  }, [todos])
 
   const addTodo = (todo) => {
+    if (!todo.trim()) return
     setTodos([
       ...todos,
       {
@@ -17,6 +27,7 @@ export const TodoWrapper = ({ mode }) => {
         completed: false,
         isEditing: false,
         checked: false,
+        timestamp: new Date().toISOString(),
       },
     ])
   }
@@ -34,6 +45,7 @@ export const TodoWrapper = ({ mode }) => {
   }
 
   const editTask = (task, id) => {
+    if (!task.trim()) return
     setTodos(todos.map((todo) => (todo.id === id ? { ...todo, task, isEditing: false } : todo)))
   }
 
@@ -42,36 +54,70 @@ export const TodoWrapper = ({ mode }) => {
   }
 
   return (
-    <div className="container mt-5">
+    <div className="container py-5">
       <div className="row justify-content-center">
         <div className="col-md-8 col-lg-6">
           <div
-            className="card shadow-lg"
+            className="card shadow-lg border-0 overflow-hidden"
             style={{
-              backgroundColor: mode === "dark" ? "#282c34" : "white",
+              backgroundColor: mode === "dark" ? "#2d3748" : "white",
               color: mode === "dark" ? "white" : "black",
+              borderRadius: "12px",
             }}
           >
-            <div className="card-body">
-              <h1 className="text-center mb-4">Todo List</h1>
+            <div
+              className="card-header py-3"
+              style={{
+                backgroundColor: mode === "dark" ? "#1a202c" : "#f8f9fa",
+                borderBottom: mode === "dark" ? "1px solid #4a5568" : "1px solid #dee2e6",
+              }}
+            >
+              <h1 className="text-center m-0 h3">Todo List</h1>
+            </div>
+            <div className="card-body p-4">
               <TodoForm addTodo={addTodo} mode={mode} />
-              <div className="todo-list mt-4">
-                {todos.map((todo) =>
-                  todo.isEditing ? (
-                    <EditTodoForm editTodo={editTask} task={todo} key={todo.id} mode={mode} />
-                  ) : (
-                    <Todo
-                      key={todo.id}
-                      task={todo}
-                      toggleComplete={toggleComplete}
-                      deleteTodo={deleteTodo}
-                      editTodo={editTodo}
-                      checkTodo={checkTodo}
-                      mode={mode}
-                    />
-                  ),
-                )}
-              </div>
+
+              {todos.length === 0 ? (
+                <div
+                  className="text-center py-5 my-3"
+                  style={{
+                    backgroundColor: mode === "dark" ? "#1a202c" : "#f8f9fa",
+                    borderRadius: "8px",
+                  }}
+                >
+                  <p className="mb-0">No tasks yet. Add a task to get started!</p>
+                </div>
+              ) : (
+                <div className="todo-list mt-4">
+                  {todos.map((todo) =>
+                    todo.isEditing ? (
+                      <EditTodoForm editTodo={editTask} task={todo} key={todo.id} mode={mode} />
+                    ) : (
+                      <Todo
+                        key={todo.id}
+                        task={todo}
+                        toggleComplete={toggleComplete}
+                        deleteTodo={deleteTodo}
+                        editTodo={editTodo}
+                        checkTodo={checkTodo}
+                        mode={mode}
+                      />
+                    ),
+                  )}
+                </div>
+              )}
+            </div>
+            <div
+              className="card-footer py-3 text-center"
+              style={{
+                backgroundColor: mode === "dark" ? "#1a202c" : "#f8f9fa",
+                borderTop: mode === "dark" ? "1px solid #4a5568" : "1px solid #dee2e6",
+              }}
+            >
+              <small className={mode === "dark" ? "text-light" : "text-muted"}>
+                {todos.length} {todos.length === 1 ? "task" : "tasks"} •{todos.filter((todo) => todo.completed).length}{" "}
+                completed
+              </small>
             </div>
           </div>
         </div>

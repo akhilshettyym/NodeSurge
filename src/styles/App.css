@@ -49,26 +49,151 @@
 }
 
 .dark-mode ::placeholder {
-  color: rgb(120, 119, 119);
+  color: rgb(200, 200, 200);
 }
 
-/* Add these styles to your existing App.css
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
+/* Dark mode implementation */
+:root {
+  --background-color: #ffffff;
+  --text-color: #000000;
+  --card-bg: #ffffff;
+  --card-border: #dee2e6;
+  --input-bg: #f8f9fa;
+  --input-border: #ced4da;
+  --btn-primary-bg: #0d6efd;
+  --btn-primary-color: #ffffff;
+  --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --hover-bg: #f0f0f0;
+}
 
-/* Dark mode styles */
 [data-theme="dark"] {
   --background-color: #181818;
   --text-color: #ffffff;
-}
-
-[data-theme="light"] {
-  --background-color: #ffffff;
-  --text-color: #000000;
+  --card-bg: #282c34;
+  --card-border: #444;
+  --input-bg: #343a40;
+  --input-border: #495057;
+  --btn-primary-bg: #0d6efd;
+  --btn-primary-color: #ffffff;
+  --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  --hover-bg: #2c2c2c;
 }
 
 body {
   background-color: var(--background-color);
   color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark mode class for components */
+.dark-mode {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.light-mode {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+/* Form controls in dark mode */
+.dark-mode .form-control {
+  background-color: var(--input-bg);
+  border-color: var(--input-border);
+  color: var(--text-color);
+}
+
+.dark-mode .card {
+  background-color: var(--card-bg);
+  border-color: var(--card-border);
+  box-shadow: var(--card-shadow);
+}
+
+/* Ensure buttons are visible in dark mode */
+.dark-mode .btn-outline-primary {
+  color: #0d6efd;
+  border-color: #0d6efd;
+}
+
+.dark-mode .btn-outline-primary:hover {
+  color: white;
+  background-color: #0d6efd;
+}
+
+.dark-mode .btn-outline-danger {
+  color: #dc3545;
+  border-color: #dc3545;
+}
+
+.dark-mode .btn-outline-danger:hover {
+  color: white;
+  background-color: #dc3545;
+}
+
+/* Improved focus styles for accessibility */
+.form-control:focus,
+.btn:focus {
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+  outline: none;
+}
+
+.dark-mode .form-control:focus,
+.dark-mode .btn:focus {
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.5);
+}
+
+/* Improved hover effects */
+.btn:hover {
+  transform: translateY(-1px);
+  transition: transform 0.2s ease;
+}
+
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--card-shadow);
+}
+
+/* Responsive typography */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.3rem;
+  }
+
+  p {
+    font-size: 0.95rem;
+  }
+}
+
+/* Improved form elements */
+.form-control {
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.btn {
+  transition: all 0.2s ease;
+}
+
+/* Improved accessibility */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
 }

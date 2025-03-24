@@ -1,7 +1,13 @@
-import React, { useState } from 'react';
+"use client";
+
+import { useState } from "react";
 
 export default function TextForm(props) {
+    const [text, setText] = useState("");
+    const [findWord, setFindWord] = useState("");
+    const [replaceWord, setReplaceWord] = useState("");
 
+    // Handlers for text transformations
     const handleUpClick = () => {
         setText(text.toUpperCase());
         props.showAlert("Text converted to uppercase successfully.", "Success");
@@ -18,15 +24,12 @@ export default function TextForm(props) {
     };
 
     const handleCopy = () => {
-        var text = document.getElementById("myBox");
-        text.select();
-        navigator.clipboard.writeText(text.value);
+        navigator.clipboard.writeText(text);
         props.showAlert("Modified text copied to clipboard.", "Success");
     };
 
     const handleExtraSpaces = () => {
-        let newText = text.split(/[ ]+/);
-        setText(newText.join(" "));
+        setText(text.replace(/\s+/g, " ").trim());
         props.showAlert("Extra spaces removed for better readability.", "Success");
     };
 
@@ -35,86 +38,137 @@ export default function TextForm(props) {
     };
 
     const handleFindReplace = () => {
-        let newText = text.replace(new RegExp(findWord, "gi"), replaceWord);
+        if (!findWord.trim()) return;
+        const newText = text.replace(new RegExp(findWord, "gi"), replaceWord);
         setText(newText);
+        props.showAlert("Text replaced successfully.", "Success");
     };
 
-    const [text, setText] = useState('');
-    const [findWord, setFindWord] = useState('');
-    const [replaceWord, setReplaceWord] = useState('');
-
     return (
-        <>
-            <div className={`container d-flex flex-column align-items-center mt-4 ${props.mode === 'dark' ? 'text-white' : 'text-dark'}`}>
-                <h1 className="text-center">{props.heading}</h1>
-                <div className="mb-3 w-75">
-                    <textarea
-                        className="form-control"
-                        value={text}
-                        onChange={handleOnChange}
-                        style={{ backgroundColor: props.mode === 'dark' ? '#181818' : 'white', color: props.mode === 'dark' ? 'white' : 'black' }}
-                        id="myBox"
-                        rows="8"
-                    ></textarea>
-                </div>
+        <div className={`container w-100 px-4 ${props.mode === "dark" ? "text-white" : "text-dark"}`}>
+            <div className="row justify-content-center">
+                <div className="col-12">
+                    <h1 className="text-center mb-4">{props.heading}</h1>
 
-                {/* Buttons Container */}
-                <div className="d-flex gap-2">
-                    <button className="btn btn-primary" onClick={handleUpClick}>
-                        Uppercase
-                    </button>
-
-                    <button className="btn btn-primary" onClick={handleLoClick}>
-                        Lowercase
-                    </button>
-
-                    <button className="btn btn-primary" onClick={handleCopy}>
-                        Copy Text
-                    </button>
-
-                    <button className="btn btn-primary" onClick={handleExtraSpaces}>
-                        Remove Extra Spaces
-                    </button>
-
-                    <button className="btn btn-danger" onClick={handleClearClick}>
-                        Clear
-                    </button>
-                </div>
-
-                {/* Find and Replace */}
-                <div className="mt-4 w-75">
-                    <h3>Find & Replace</h3>
-                    <div className="d-flex gap-2">
-                        <input
-                            type="text"
-                            className="form-control"
-                            placeholder="Find..."
-                            value={findWord}
-                            onChange={(e) => setFindWord(e.target.value)}
-                            style={{ backgroundColor: props.mode === 'dark' ? '#181818' : 'white', color: props.mode === 'dark' ? 'white' : 'black' }}
-                        />
-                        <input
-                            type="text"
-                            className="form-control"
-                            placeholder="Replace with..."
-                            value={replaceWord}
-                            onChange={(e) => setReplaceWord(e.target.value)}
-                            style={{ backgroundColor: props.mode === 'dark' ? '#181818' : 'white', color: props.mode === 'dark' ? 'white' : 'black' }}
-                        />
-                        <button className="btn btn-success" onClick={handleFindReplace}>
-                            Replace
-                        </button>
+                    {/* Textarea */}
+                    <div className="mb-4 text-center">
+                        <textarea
+                            className="form-control shadow-sm"
+                            value={text}
+                            onChange={handleOnChange}
+                            style={{
+                                backgroundColor: props.mode === "dark" ? "#2d3748" : "white",
+                                color: props.mode === "dark" ? "white" : "black",
+                                border: props.mode === "dark" ? "1px solid #4a5568" : "1px solid #ced4da",
+                                borderRadius: "8px",
+                                minHeight: "300px",
+                                padding: "20px",
+                                fontSize: "18px",
+                                resize: "vertical",
+                                width: "95%",      
+                                maxWidth: "1500px",  
+                                margin: "0 auto", 
+                            }}
+                            id="myBox"
+                            rows="8"
+                            placeholder="Enter your text here..."
+                        ></textarea>
                     </div>
+
+                    {/* Buttons */}
+                    <div className="d-flex flex-wrap gap-2 mb-4 justify-content-center">
+                        <button className="btn btn-primary px-3 py-2" onClick={handleUpClick}>Uppercase</button>
+                        <button className="btn btn-primary px-3 py-2" onClick={handleLoClick}>Lowercase</button>
+                        <button className="btn btn-primary px-3 py-2" onClick={handleCopy}>Copy Text</button>
+                        <button className="btn btn-primary px-3 py-2" onClick={handleExtraSpaces}>Remove Extra Spaces</button>
+                        <button className="btn btn-danger px-3 py-2" onClick={handleClearClick}>Clear</button>
+                    </div>
+
+                    {/* Find & Replace */}
+                    <div className="mb-4">
+                        <h3 className="mb-3">Find & Replace</h3>
+                        <div className="row g-3">
+                            <div className="col-md-5">
+                                <input
+                                    type="text"
+                                    className="form-control"
+                                    placeholder="Find..."
+                                    value={findWord}
+                                    onChange={(e) => setFindWord(e.target.value)}
+                                    style={{
+                                        backgroundColor: props.mode === "dark" ? "#2d3748" : "white",
+                                        color: props.mode === "dark" ? "white" : "black",
+                                        border: props.mode === "dark" ? "1px solid #4a5568" : "1px solid #ced4da",
+                                    }}
+                                />
+                            </div>
+                            <div className="col-md-5">
+                                <input
+                                    type="text"
+                                    className="form-control"
+                                    placeholder="Replace with..."
+                                    value={replaceWord}
+                                    onChange={(e) => setReplaceWord(e.target.value)}
+                                    style={{
+                                        backgroundColor: props.mode === "dark" ? "#2d3748" : "white",
+                                        color: props.mode === "dark" ? "white" : "black",
+                                        border: props.mode === "dark" ? "1px solid #4a5568" : "1px solid #ced4da",
+                                    }}
+                                />
+                            </div>
+                            <div className="col-md-2">
+                                <button className="btn btn-success w-100" onClick={handleFindReplace} disabled={!findWord.trim()}>
+                                    Replace
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Text Summary */}
+                    <div
+                        className="card shadow-sm mb-4 mx-auto"
+                        style={{
+                            backgroundColor: props.mode === "dark" ? "#2d3748" : "white",
+                            color: props.mode === "dark" ? "white" : "black",
+                            border: props.mode === "dark" ? "1px solid #4b576c" : "1px solid #ced4da",
+                            borderRadius: "8px",
+                            minHeight: "300px",
+                            padding: "20px",
+                            fontSize: "18px",
+                            resize: "vertical",
+                            width: "95%",        
+                            maxWidth: "1500px", 
+                            margin: "0 auto",
+                        }}
+                    >
+                        <div className="card-body">
+                            <h2 className="card-title h4 mb-3">Your text summary</h2>
+                            <p className="mb-2">
+                                <strong>{text.split(/\s+/).filter((word) => word !== "").length}</strong> words and
+                                <strong> {text.length}</strong> characters
+                            </p>
+                            <p className="mb-3">
+                                <strong>{(0.008 * text.split(/\s+/).filter((word) => word !== "").length).toFixed(2)}</strong> minutes
+                                read time
+                            </p>
+                            <h3 className="h5 mb-2">Preview</h3>
+                            <p
+                                className="card-text"
+                                style={{
+                                    backgroundColor: props.mode === "dark" ? "#1a202c" : "#f8f9fa",
+                                    color: props.mode === "dark" ? "white" : "black", // Fixed text color issue
+                                    padding: "10px",
+                                    borderRadius: "5px",
+                                    minHeight: "50px",
+                                }}
+                            >
+                                {text.length > 0 ? text : "Enter text above to preview it here."}
+                            </p>
+                        </div>
+                    </div>
+
                 </div>
             </div>
-
-            <div className={`container my-2 ${props.mode === 'dark' ? 'text-white' : 'text-dark'}`}>
-                <h2>Your text summary</h2>
-                <p>{text.split(" ").filter(word => word !== "").length} words and {text.length} characters</p>
-                <p>{0.008 * (text.split(" ").filter(word => word !== "").length)} Minute is required to finish reading.</p>
-                <h3>Preview</h3>
-                <p>{text.length > 0 ? text : "Enter the data above to preview it.!!!"}</p>
-            </div>
-        </>
+        </div>
     );
 }
