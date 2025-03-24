@@ -30,7 +30,7 @@ export default function About(props) {
             >🚀 About Our Multi-Utility Website</h2>
             <p>
                 Welcome to our multi-utility website — a single platform offering multiple helpful tools designed to make your
-                daily tasks easier and more efficient. Below is a detailed overview of the four key apps integrated into our
+                daily tasks easier and more efficient. Below is a detailed overview of the six key apps integrated into our
                 platform:
             </p>
 
@@ -70,6 +70,40 @@ export default function About(props) {
                         </div>
                     </div>
                 </div>
+
+
+                {/* Currex Section */}
+                <div className="accordion-item">
+                    <h2 className="accordion-header">
+                        <button
+                            className="accordion-button collapsed"
+                            type="button"
+                            style={myStyle}
+                            data-bs-toggle="collapse"
+                            data-bs-target="#Currex"
+                            aria-expanded="false"
+                            aria-controls="Currex"
+                        >
+                            💸 Currex —  Sleek & Fast Currency Converter
+                        </button>
+                    </h2>
+                    <div id="Currex" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                        <div className="accordion-body" style={myStyle}>
+                        <strong>Currex</strong> is a sleek and seamless currency converter that allows you to instantly convert and swap between multiple currencies with real-time exchange rates. That can :
+                            <ul>
+                                <li>Convert INR to USD, EUR, GBP, and multiple other global currencies in real-time</li>
+                                <li>Seamlessly swap between any two currencies with up-to-date exchange rates</li>
+                                <li>Get instant value conversion with a sleek and intuitive user interface</li>
+                                <li>Supports multiple currencies with accurate financial data</li>
+                                <li>Lightweight and optimized for a fast and seamless user experience</li>
+                            </ul>
+
+                            💰 <strong>Currex</strong> – Convert, Swap, and Stay Ahead! 🚀
+                        </div>
+                    </div>
+                </div>
+
+
 
                 {/* ChatNest Section */}
                 <div className="accordion-item">
