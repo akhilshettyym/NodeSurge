@@ -21,7 +21,7 @@ export default function WeatherApp({ mode }) {
   }, [recentSearches])
 
   const searchLocation = async (event, searchTerm = location) => {
-    if ((event && event.key === "Enter" && searchTerm.trim() !== "") || (!event && searchTerm.trim() !== "")) {
+    if ((event?.key === "Enter" || !event) && searchTerm.trim() !== "") {
       setLoading(true)
       setError(null)
       try {
@@ -29,16 +29,14 @@ export default function WeatherApp({ mode }) {
         const response = await axios.get(url)
         setData(response.data)
 
-        // Add to recent searches if not already there
         if (!recentSearches.includes(searchTerm)) {
           setRecentSearches((prev) => [searchTerm, ...prev].slice(0, 5))
         }
-
-        setLoading(false)
       } catch (error) {
         console.error("Error fetching weather data:", error)
         setData(null)
         setError("Location not found. Please try again.")
+      } finally {
         setLoading(false)
       }
     }
@@ -56,12 +54,12 @@ export default function WeatherApp({ mode }) {
           <input
             value={location}
             onChange={(event) => setLocation(event.target.value)}
-            onKeyDown={searchLocation}
+            onKeyDown={(event) => searchLocation(event)}
             placeholder="Enter Location"
             type="text"
             style={{
               backgroundColor: mode === "dark" ? "rgba(40, 40, 40, 0.7)" : "rgba(255, 255, 255, 0.1)",
-              color: mode === "dark" ? "white" : "white",
+              color: "white",
             }}
           />
           <button onClick={() => searchLocation(null, location)} className="search-button" disabled={!location.trim()}>
@@ -84,16 +82,13 @@ export default function WeatherApp({ mode }) {
       </div>
 
       {loading && <div className="loading">Loading weather data...</div>}
-
       {error && <div className="error">{error}</div>}
 
       {data && (
         <div className="weather-container">
           <div className="top">
             <div className="location">
-              <p>
-                {data.name}, {data.sys.country}
-              </p>
+              <p>{data.name}, {data.sys.country}</p>
             </div>
 
             <div className="temp">
@@ -106,12 +101,7 @@ export default function WeatherApp({ mode }) {
             </div>
           </div>
 
-          <div
-            className="bottom"
-            style={{
-              backgroundColor: mode === "dark" ? "rgba(40, 40, 40, 0.7)" : "rgba(255, 255, 255, 0.2)",
-            }}
-          >
+          <div className="bottom" style={{ backgroundColor: mode === "dark" ? "rgba(40, 40, 40, 0.7)" : "rgba(255, 255, 255, 0.2)" }}>
             <div className="feels">
               <p className="bold">{Math.round(data.main.feels_like)}°C</p>
               <p>Feels like</p>
