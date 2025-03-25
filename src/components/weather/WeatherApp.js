@@ -48,7 +48,12 @@ export default function WeatherApp({ mode }) {
   }
 
   return (
-    <div className={`weather-app ${mode === "dark" ? "dark-mode" : ""}`}>
+    <div
+      className={`weather-app ${mode === "dark" ? "dark-mode" : ""}`}
+      style={{
+        paddingTop: "70px", // Add padding to account for navbar
+      }}
+    >
       <div className="search-container">
         <div className="search">
           <input
@@ -87,8 +92,10 @@ export default function WeatherApp({ mode }) {
       {data && (
         <div className="weather-container">
           <div className="top">
-            <div className="location" >
-              <p style={{ color: "white" }}>{data.name}, {data.sys.country}</p>
+            <div className="location">
+              <p style={{ color: "white" }}>
+                {data.name}, {data.sys.country}
+              </p>
             </div>
 
             <div className="temp">
@@ -97,29 +104,42 @@ export default function WeatherApp({ mode }) {
 
             <div className="description">
               <p style={{ color: "white" }}>{data.weather[0].main}</p>
-              <p className="weather-description" style={{ color: "white" }}>{data.weather[0].description}</p>
+              <p className="weather-description" style={{ color: "white" }}>
+                {data.weather[0].description}
+              </p>
             </div>
           </div>
 
-          <div className="bottom" style={{ backgroundColor: mode === "dark" ? "rgba(40, 40, 40, 0.7)" : "rgba(255, 255, 255, 0.2)" }}>
+          <div
+            className="bottom"
+            style={{ backgroundColor: mode === "dark" ? "rgba(40, 40, 40, 0.7)" : "rgba(255, 255, 255, 0.2)" }}
+          >
             <div className="feels">
-            <p className="bold" style={{ color: "white" }}>{Math.round(data.main.feels_like)}°C</p>
-              <p style={{ color: 'white' }}>Feels like</p>
+              <p className="bold" style={{ color: "white" }}>
+                {Math.round(data.main.feels_like)}°C
+              </p>
+              <p style={{ color: "white" }}>Feels like</p>
             </div>
 
             <div className="humidity">
-              <p className="bold" style={{ color: "white" }}>{data.main.humidity}%</p>
-              <p style={{ color: 'white' }}>Humidity</p>
+              <p className="bold" style={{ color: "white" }}>
+                {data.main.humidity}%
+              </p>
+              <p style={{ color: "white" }}>Humidity</p>
             </div>
 
             <div className="wind">
-              <p className="bold" style={{ color: "white" }}>{data.wind.speed} km/h</p>
-              <p style={{ color: 'white' }}>Wind Speed</p>
+              <p className="bold" style={{ color: "white" }}>
+                {data.wind.speed} km/h
+              </p>
+              <p style={{ color: "white" }}>Wind Speed</p>
             </div>
 
             <div className="pressure">
-              <p className="bold" style={{ color: "white" }}>{data.main.pressure} hPa</p>
-              <p style={{ color: 'white' }}>Pressure</p>
+              <p className="bold" style={{ color: "white" }}>
+                {data.main.pressure} hPa
+              </p>
+              <p style={{ color: "white" }}>Pressure</p>
             </div>
           </div>
         </div>

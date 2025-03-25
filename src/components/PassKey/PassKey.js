@@ -2,6 +2,7 @@
 
 import { useState, useCallback, useEffect, useRef } from "react"
 import "../../styles/Passkey.css"
+import passKeyBg from "../../assets/passkey.jpg"
 
 function PassKey({ mode }) {
   const [length, setLength] = useState(8)
@@ -38,17 +39,33 @@ function PassKey({ mode }) {
 
   return (
     <div
-      className="passkey-container"
       style={{
-        backgroundColor: mode === "dark" ? "#181818" : "white",
-        color: mode === "dark" ? "white" : "black",
-        minHeight: "80vh",
+        position: "relative",
+        minHeight: "100vh",
+        backgroundImage: `url(${passKeyBg})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        backgroundAttachment: "fixed",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        padding: "20px",
+        paddingTop: "70px", // Add padding to account for navbar
+        paddingBottom: "30px",
       }}
     >
+      <div
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          backgroundColor: mode === "dark" ? "rgba(0, 0, 0, 0.8)" : "rgba(255, 255, 255, 0.7)",
+          zIndex: 0,
+        }}
+      ></div>
+
       <div
         className="card"
         style={{
@@ -57,6 +74,9 @@ function PassKey({ mode }) {
           boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
           maxWidth: "500px",
           width: "100%",
+          position: "relative",
+          zIndex: 1,
+          margin: "0 20px",
         }}
       >
         <h2 className="title" style={{ color: mode === "dark" ? "#ff8c00" : "#ff8c00" }}>

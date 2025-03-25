@@ -60,7 +60,7 @@ export const TodoWrapper = ({ mode }) => {
           <div
             className="card shadow-lg border-0 overflow-hidden"
             style={{
-              backgroundColor: mode === "dark" ? "#2d3748" : "white",
+              backgroundColor: mode === "dark" ? "rgba(45, 55, 72, 0.7)" : "rgba(255, 255, 255, 0.5)",
               color: mode === "dark" ? "white" : "black",
               borderRadius: "12px",
             }}
@@ -68,7 +68,7 @@ export const TodoWrapper = ({ mode }) => {
             <div
               className="card-header py-3"
               style={{
-                backgroundColor: mode === "dark" ? "#1a202c" : "#f8f9fa",
+                backgroundColor: mode === "dark" ? "rgba(26, 32, 44, 0.8)" : "rgba(248, 249, 250, 0.6)",
                 borderBottom: mode === "dark" ? "1px solid #4a5568" : "1px solid #dee2e6",
               }}
             >
@@ -81,7 +81,7 @@ export const TodoWrapper = ({ mode }) => {
                 <div
                   className="text-center py-5 my-3"
                   style={{
-                    backgroundColor: mode === "dark" ? "#1a202c" : "#f8f9fa",
+                    backgroundColor: mode === "dark" ? "rgba(26, 32, 44, 0.6)" : "rgba(248, 249, 250, 0.4)",
                     borderRadius: "8px",
                   }}
                 >
@@ -110,7 +110,7 @@ export const TodoWrapper = ({ mode }) => {
             <div
               className="card-footer py-3 text-center"
               style={{
-                backgroundColor: mode === "dark" ? "#1a202c" : "#f8f9fa",
+                backgroundColor: mode === "dark" ? "rgba(26, 32, 44, 0.8)" : "rgba(248, 249, 250, 0.6)",
                 borderTop: mode === "dark" ? "1px solid #4a5568" : "1px solid #dee2e6",
               }}
             >

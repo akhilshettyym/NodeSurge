@@ -8,7 +8,7 @@ export const Todo = ({ task, toggleComplete, deleteTodo, editTodo, checkTodo, mo
     <div
       className="card mb-3 border-0 shadow-sm"
       style={{
-        backgroundColor: mode === "dark" ? "#1a202c" : "#f8f9fa",
+        backgroundColor: mode === "dark" ? "rgba(26, 32, 44, 0.7)" : "rgba(248, 249, 250, 0.5)",
         color: mode === "dark" ? "white" : "black",
         borderRadius: "8px",
         transition: "transform 0.2s, box-shadow 0.2s",

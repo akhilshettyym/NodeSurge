@@ -1,11 +1,27 @@
 "use client"
 
 import {
-  Router, Route, Routes,useState, Navbar, TextForm, About, Alert, Contact,
-  LandingPage, SignUp, Login, Home, TodoApp, WeatherApp, ChatBot, PassKey,
-  Currex, AuthProvider, PrivateRoute
+  Router,
+  Route,
+  Routes,
+  useState,
+  Navbar,
+  TextForm,
+  About,
+  Alert,
+  Contact,
+  LandingPage,
+  SignUp,
+  Login,
+  Home,
+  TodoApp,
+  WeatherApp,
+  ChatBot,
+  PassKey,
+  Currex,
+  AuthProvider,
+  PrivateRoute,
 } from "./imports"
-
 
 function App() {
   const [mode, setMode] = useState("light")
@@ -31,83 +47,85 @@ function App() {
   return (
     <AuthProvider>
       <Router>
-        <Navbar title="NodeSurge" mode={mode} toggleMode={toggleMode} />
-        <Alert alert={alert} />
-        <Routes>
-          <Route path="/" element={<LandingPage mode={mode} />} />
-          <Route path="/signup" element={<SignUp mode={mode} />} />
-          <Route path="/login" element={<Login mode={mode} />} />
+        <div style={{ position: "relative", minHeight: "100vh" }}>
+          <div style={{ position: "sticky", top: 0, zIndex: 1000 }}>
+            <Navbar title="NodeSurge" mode={mode} toggleMode={toggleMode} />
+            <Alert alert={alert} />
+          </div>
+          <Routes>
+            <Route path="/" element={<LandingPage mode={mode} />} />
+            <Route path="/signup" element={<SignUp mode={mode} />} />
+            <Route path="/login" element={<Login mode={mode} />} />
 
-          <Route
-            path="/home"
-            element={
-              <PrivateRoute>
-                <Home mode={mode} />
-              </PrivateRoute>
-            }
-          />
+            <Route
+              path="/home"
+              element={
+                <PrivateRoute>
+                  <Home mode={mode} />
+                </PrivateRoute>
+              }
+            />
 
-          <Route path="/about" element={<About mode={mode} />} />
-          <Route path="/Contact" element={<Contact />} />
+            <Route path="/about" element={<About mode={mode} />} />
+            <Route path="/Contact" element={<Contact />} />
 
-          <Route
-            path="/todo"
-            element={
-              <PrivateRoute>
-                <TodoApp mode={mode} />
-              </PrivateRoute>
-            }
-          />
+            <Route
+              path="/todo"
+              element={
+                <PrivateRoute>
+                  <TodoApp mode={mode} />
+                </PrivateRoute>
+              }
+            />
 
-          <Route
-            path="/passkey"
-            element={
-              <PrivateRoute>
-                <PassKey mode={mode} />
-              </PrivateRoute>
-            }
-          />
+            <Route
+              path="/passkey"
+              element={
+                <PrivateRoute>
+                  <PassKey mode={mode} />
+                </PrivateRoute>
+              }
+            />
 
-          <Route
-            path="/currex"
-            element={
-              <PrivateRoute>
-                <Currex mode={mode} />
-              </PrivateRoute>
-            }
-          />
+            <Route
+              path="/currex"
+              element={
+                <PrivateRoute>
+                  <Currex mode={mode} />
+                </PrivateRoute>
+              }
+            />
 
-          <Route
-            path="/weather"
-            element={
-              <PrivateRoute>
-                <WeatherApp mode={mode} />
-              </PrivateRoute>
-            }
-          />
+            <Route
+              path="/weather"
+              element={
+                <PrivateRoute>
+                  <WeatherApp mode={mode} />
+                </PrivateRoute>
+              }
+            />
 
-          <Route
-            path="/chatbot"
-            element={
-              <PrivateRoute>
-                <ChatBot mode={mode} />
-              </PrivateRoute>
-            }
-          />
+            <Route
+              path="/chatbot"
+              element={
+                <PrivateRoute>
+                  <ChatBot mode={mode} />
+                </PrivateRoute>
+              }
+            />
 
-          <Route
-            path="/proreact"
-            element={
-              <PrivateRoute>
-                <div className="container my-5">
-                  <TextForm showAlert={showAlert} heading="Enter your text to analyze below:" mode={mode} />
-                </div>
-              </PrivateRoute>
-            }
-          />
-
-        </Routes>
-
+            <Route
+              path="/proreact"
+              element={
+                <PrivateRoute>
+                  <div className="container-fluid p-0">
+                    <TextForm showAlert={showAlert} heading="Enter your text to analyze below:" mode={mode} />
+                  </div>
+                </PrivateRoute>
+              }
+            />
+          </Routes>
+        </div>
       </Router>
     </AuthProvider>
   )
