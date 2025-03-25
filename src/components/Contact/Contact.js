@@ -1,17 +1,23 @@
 import "./Contact.css"
+import contactBg from "../../assets/contact.jpg"
 
 const Contact = ({ mode }) => {
   return (
     <div
       className={`contact-container ${mode === "dark" ? "dark-mode" : ""}`}
       style={{
+        backgroundImage: `url(${contactBg})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        backgroundAttachment: "fixed",
         backgroundColor: mode === "dark" ? "#181818" : "#f4f4f9",
       }}
     >
       <div
         className="contact-card"
         style={{
-          backgroundColor: mode === "dark" ? "#282c34" : "#ffffff",
+          backgroundColor: mode === "dark" ? "rgba(40, 44, 52, 0.85)" : "rgba(255, 255, 255, 0.85)",
           color: mode === "dark" ? "#ffffff" : "#333",
           boxShadow: mode === "dark" ? "0 4px 15px rgba(0, 0, 0, 0.5)" : "0 4px 15px rgba(0, 0, 0, 0.2)",
         }}
@@ -59,5 +65,4 @@ const Contact = ({ mode }) => {
   )
 }
 
-export default Contact
-
+export default Contact;
