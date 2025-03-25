@@ -1,17 +1,22 @@
 {
   "files": {
-    "main.css": "/NodeSurge/static/css/main.982e0271.css",
-    "main.js": "/NodeSurge/static/js/main.b147c462.js",
+    "main.css": "/NodeSurge/static/css/main.ee68ab4e.css",
+    "main.js": "/NodeSurge/static/js/main.7527dea3.js",
     "static/js/511.2426fa85.chunk.js": "/NodeSurge/static/js/511.2426fa85.chunk.js",
     "static/media/currex.jpg": "/NodeSurge/static/media/currex.b511330901be80cb0900.jpg",
+    "static/media/passkey.jpg": "/NodeSurge/static/media/passkey.6a903cd5f5162346626c.jpg",
     "static/media/weather.jpg": "/NodeSurge/static/media/weather.e3984e97da583fec2964.jpg",
+    "static/media/home.jpg": "/NodeSurge/static/media/home.cd97fd0abe914e658568.jpg",
+    "static/media/proreact.jpg": "/NodeSurge/static/media/proreact.9660ef7e479405dbdce2.jpg",
+    "static/media/todo.jpg": "/NodeSurge/static/media/todo.84a8d1cbbdafb18d8b72.jpg",
+    "static/media/chatnest.jpg": "/NodeSurge/static/media/chatnest.c817fccc0e445aef4cce.jpg",
     "index.html": "/NodeSurge/index.html",
-    "main.982e0271.css.map": "/NodeSurge/static/css/main.982e0271.css.map",
-    "main.b147c462.js.map": "/NodeSurge/static/js/main.b147c462.js.map",
+    "main.ee68ab4e.css.map": "/NodeSurge/static/css/main.ee68ab4e.css.map",
+    "main.7527dea3.js.map": "/NodeSurge/static/js/main.7527dea3.js.map",
     "511.2426fa85.chunk.js.map": "/NodeSurge/static/js/511.2426fa85.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.982e0271.css",
-    "static/js/main.b147c462.js"
+    "static/css/main.ee68ab4e.css",
+    "static/js/main.7527dea3.js"
   ]
 }
