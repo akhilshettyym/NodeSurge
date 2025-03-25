@@ -69,6 +69,7 @@ const ChatBot = ({ mode }) => {
           name="description"
           content="Chat with our AI assistant for help with research, coding, and more. Get smart, contextual responses in real-time."
         />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
       </Helmet>
       <div
         style={{
@@ -82,8 +83,7 @@ const ChatBot = ({ mode }) => {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          paddingTop: "70px", // Add padding to account for navbar
-          paddingBottom: "30px",
+          padding: "0",
         }}
       >
         <div
@@ -105,20 +105,14 @@ const ChatBot = ({ mode }) => {
             position: "relative",
             zIndex: 1,
             width: "100%",
+            height: "100vh",
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
-            padding: "20px",
+            padding: "0",
           }}
         >
-          <div
-            className="chatbot-popup"
-            style={{
-              width: "50%",
-              maxWidth: "800px",
-              margin: "0 auto",
-            }}
-          >
+          <div className="chatbot-popup">
             {/* Chatbot Header */}
             <div className="chat-header">
               <div className="header-info">
