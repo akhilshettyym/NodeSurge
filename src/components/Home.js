@@ -1,17 +1,16 @@
-import { Link } from "react-router-dom"
-import "../styles/home.css"
-import homeBg from "../assets/home.jpg"
+import { Link } from "react-router-dom";
+import "../styles/home.css";
+import homeBg from "../assets/home.jpg";
 
 export default function Home({ mode }) {
   const apps = [
     {
       title: "ProReact",
       description:
-        " ProReact is a text utility app that allows users to format text, convert case, remove extra spaces, and count words and letters in real-time. It's ideal for writers and content creators.",
+        "ProReact is a text utility app that allows users to format text, convert case, remove extra spaces, and count words and letters in real-time. It's ideal for writers and content creators.",
       icon: "📝",
       href: "/proreact",
     },
-
     {
       title: "Currex",
       description:
@@ -19,7 +18,20 @@ export default function Home({ mode }) {
       icon: "💸",
       href: "/currex",
     },
-
+    {
+      title: "Todo Manager",
+      description:
+        "To-Do Manager helps users manage daily tasks by creating, updating, and tracking them. Its clean interface makes it easy to stay organized and productive.",
+      icon: "✓",
+      href: "/todo",
+    },
+    {
+      title: "Weather App",
+      description:
+        "Weather App provides real-time weather updates, including temperature, humidity, wind speed, and current conditions. Stay informed about the weather anytime, anywhere.",
+      icon: "🌤️",
+      href: "/weather",
+    },
     {
       title: "PassKey",
       description:
@@ -34,21 +46,7 @@ export default function Home({ mode }) {
       icon: "🤖",
       href: "/chatbot",
     },
-    {
-      title: "Todo Manager",
-      description:
-        "To-Do Manager helps users manage daily tasks by creating, updating, and tracking them. Its clean interface makes it easy to stay organized and productive.",
-      icon: "✓",
-      href: "/todo",
-    },
-    {
-      title: "Weather App",
-      description:
-        "Weather App provides real-time weather updates for Goa, including temperature, humidity, wind speed, and current conditions. Stay informed about the weather anytime, anywhere.",
-      icon: "🌤️",
-      href: "/weather",
-    },
-  ]
+  ];
 
   return (
     <div
@@ -58,33 +56,19 @@ export default function Home({ mode }) {
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
-        position: "relative",
         minHeight: "100vh",
       }}
     >
+      {/* Dark Mode Overlay */}
       <div
+        className="overlay"
         style={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          width: "100%",
-          height: "100%",
           backgroundColor: mode === "dark" ? "rgba(0, 0, 0, 0.8)" : "rgba(255, 255, 255, 0.8)",
-          zIndex: 0,
         }}
       ></div>
 
-      <div style={{ position: "relative", zIndex: 1 }}>
-        <h1
-          className="text-3xl font-bold mb-8 text-center"
-          style={{
-            marginTop: "-20px",
-            fontWeight: 750,
-            color: mode === "dark" ? "#f8f9fa" : "#212529", // Adjust colors for dark and light mode
-          }}
-        >
-          Explore Your Tools
-        </h1>
+      <div className="content">
+        <h1 className="app-header">Explore Your Tools</h1>
 
         <div className="app-list">
           {apps.map((app) => (
@@ -99,5 +83,5 @@ export default function Home({ mode }) {
         </div>
       </div>
     </div>
-  )
+  );
 }
