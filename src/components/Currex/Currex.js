@@ -86,7 +86,6 @@ function Currex({ mode }) {
   )
 }
 
-// Include InputBox component directly to ensure it's available
 function InputBox(props) {
   const {
     label,

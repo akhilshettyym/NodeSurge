@@ -50,7 +50,7 @@ function PassKey({ mode }) {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        paddingTop: "70px", // Add padding to account for navbar
+        paddingTop: "70px",
         paddingBottom: "30px",
       }}
     >

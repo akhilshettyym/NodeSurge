@@ -6,7 +6,6 @@ export const EditTodoForm = ({ editTodo, task, mode }) => {
   const [value, setValue] = useState(task.task)
   const inputRef = useRef(null)
 
-  // Focus the input when the component mounts
   useEffect(() => {
     if (inputRef.current) {
       inputRef.current.focus()

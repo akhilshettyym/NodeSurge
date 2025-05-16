@@ -1,7 +1,7 @@
 "use client"
 
 export const Todo = ({ task, toggleComplete, deleteTodo, editTodo, checkTodo, mode }) => {
-  // Format the timestamp if it exists
+
   const formattedDate = task.timestamp ? new Date(task.timestamp).toLocaleDateString() : ""
 
   return (

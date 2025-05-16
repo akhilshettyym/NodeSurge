@@ -6,13 +6,12 @@ import { Todo } from "./Todo"
 import { EditTodoForm } from "./EditTodoForm"
 
 export const TodoWrapper = ({ mode }) => {
-  // Load todos from localStorage on component mount
+
   const [todos, setTodos] = useState(() => {
     const savedTodos = localStorage.getItem("todos")
     return savedTodos ? JSON.parse(savedTodos) : []
   })
 
-  // Save todos to localStorage whenever they change
   useEffect(() => {
     localStorage.setItem("todos", JSON.stringify(todos))
   }, [todos])

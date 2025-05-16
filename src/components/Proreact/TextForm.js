@@ -8,7 +8,6 @@ export default function TextForm(props) {
   const [findWord, setFindWord] = useState("")
   const [replaceWord, setReplaceWord] = useState("")
 
-  // Handlers for text transformations
   const handleUpClick = () => {
     setText(text.toUpperCase())
     props.showAlert("Text converted to uppercase successfully.", "Success")

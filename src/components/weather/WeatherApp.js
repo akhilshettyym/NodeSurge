@@ -51,7 +51,7 @@ export default function WeatherApp({ mode }) {
     <div
       className={`weather-app ${mode === "dark" ? "dark-mode" : ""}`}
       style={{
-        paddingTop: "70px", // Add padding to account for navbar
+        paddingTop: "70px",
       }}
     >
       <div className="search-container">
