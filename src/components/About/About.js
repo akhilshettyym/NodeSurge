@@ -7,7 +7,6 @@ import aboutBg from "../../assets/about.jpg"
 export default function About(props) {
   const [darkMode, setDarkMode] = useState(props.mode === "dark")
 
-  // Update darkMode state when props.mode changes
   useEffect(() => {
     setDarkMode(props.mode === "dark")
   }, [props.mode])
@@ -30,7 +29,7 @@ export default function About(props) {
         backgroundRepeat: "no-repeat",
         backgroundAttachment: "fixed",
         minHeight: "100vh",
-        paddingTop: "20px", // Added padding at the top
+        paddingTop: "20px",
         paddingBottom: "20px",
       }}
     >

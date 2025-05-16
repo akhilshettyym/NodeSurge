@@ -5,7 +5,6 @@ import { getAnalytics } from "firebase/analytics"
 import { getAuth } from "firebase/auth"
 import { doCreateUserWithEmailAndPassword, doSignInWithEmailAndPassword, doSignOut } from "./auth"
 
-// Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyBpFUifK4u1-K0cr9ydjg_Iv4zvnCHiZ-M",
   authDomain: "nodesurge.firebaseapp.com",
