@@ -1,4 +1,4 @@
-🔗 [NODESURGE]([https://akhilshettym.vercel.app](https://akhilshettyym.github.io/NodeSurge/))
+🔗 [NODESURGE](https://akhilshettyym.github.io/NodeSurge/)
 
 # Getting Started with Create React App
 
